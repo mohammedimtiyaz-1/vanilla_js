@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel='icon' href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <title>JavaScript30 - Day 03</title>
+</head>
+
+<body>
+
+    <h3>Update CSS Variables with JS</h3>
+
+    <div class="controls">
+        <label for="padding" class="highlight">Padding:</label>
+        <input type="range" name="padding" min="0" max="3" step="0.1" value="1" data-sizing="vw">
+
+        <label for="blur" class="highlight">Blur:</label>
+        <input type="range" name="blur" min="0" max="25" value="5" data-sizing="px">
+
+        <label for="size" class="highlight">Size:</label>
+        <input type="range" name="size" min="20" max="40" value="35" data-sizing="vw">
+
+        <label for="color" class="highlight">Color:</label>
+        <input type="color" name="color" value="#d56627">
+
+        <br>
+        <button id="button">Change Picture</button>
+        <br><br>
+        <img src="https://picsum.photos/500/300" alt="Image Not Found">
+    </div>
+
+    <script >
+        // update picture with random Lorem Picsum image
+        const btn = this.document.getElementById("button");
+        btn.addEventListener("click", pictureUpdate);
+        function pictureUpdate() {
+            const image = document.querySelector("img");
+            let randomNum = Math.floor((Math.random() * 999) + 1);
+            image.src = "https://picsum.photos/id/" + randomNum + "/500/300";
+        }
+    
+        // get all input fields
+        const inputs = document.querySelectorAll(".controls input");
+    
+        // get data attributes, and update value using CSS variable + name
+        function handleUpdate() {
+            const suffix = this.dataset.sizing || "";
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+        }
+    
+        // trigger changes on 'change' and 'slider'
+        inputs.forEach(input => input.addEventListener("change", handleUpdate));
+        inputs.forEach(input => input.addEventListener("mousemove", handleUpdate));
+   </script>
+
+</body>
+
+</html>

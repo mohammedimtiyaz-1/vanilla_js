@@ -1,0 +1,51 @@
+:root {
+    --color: #d56627;
+    --padding: 1vw;
+    --blur: 5px;
+    --size: 35vw;
+    --pic: 350;
+}
+
+body {
+    text-align: center;
+    background-color: #193549;
+    color: white;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: 2em;
+    text-shadow: 2px 2px 2px black;
+}
+
+.controls {
+     
+    margin:auto;
+    max-width: 50%;
+}
+.input{
+    margin-bottom: 1rem;
+    border-bottom: 5px solid #d56627;
+}
+
+img {
+    margin: auto;
+        width: var(--size);
+    padding: var(--padding);
+    background: var(--color);
+    filter: blur(var(--blur));
+    border-radius: 8px;
+    box-shadow: 0 2vw 4vw -1vw black;
+}
+
+.highlight {
+    color: var(--color);
+}
+
+button {
+    background-color: var(--color);
+    border: 2px solid white;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.5em;
+}
