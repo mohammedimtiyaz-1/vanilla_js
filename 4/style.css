@@ -1,0 +1,10 @@
+*:not(strong) {font-weight: normal; list-style: none; padding: 0; text-align: center; box-sizing: border-box;}
+body, hr {margin: 1em;}
+h3 {color: red;}
+table, ul li, .number {margin: 0.5em;}
+table *, ul li, .number {padding: 0.5em;}
+table, th {background-color: #ccc;}
+tr, ul li, .number {background-color: #f0f0ff;}
+ul li, .number {border: 3px solid #ccc;}
+ul {columns: 3;}
+th, .number {font-weight: bolder;}

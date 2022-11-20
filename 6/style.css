@@ -1,0 +1,107 @@
+html {
+    box-sizing: border-box;
+    background-color: #1f70bb;
+    font-family: "Helvetica Neue";
+    font-size: 20px;
+    font-weight: 200;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.search-form {
+    max-width: 400px;
+    margin: 50px auto;
+    max-height: 60vh;
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+}
+h1{
+    display:  flex;
+    text-decoration: underline;
+    text-decoration-color: black;
+    color: #EFEFEF;
+    text-transform: uppercase;
+    justify-content: center;
+}
+input.search {
+    
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    top: 10px;
+    left: -10%;
+    width: 120%;
+    font-size: 40px;
+    text-align: center;
+    outline: 0;
+    border-radius: 5px;
+    border: 10px solid #F7F7F7;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15), inset 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.results {
+    margin: 0;
+    padding: 0;
+    position: relative;
+   
+    scrollbar-color: rgb(119, 0, 255) rgb(29, 29, 28);
+}
+
+.results li {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+    text-transform: capitalize;
+    background-color: white;
+    border-bottom: 1px solid #D8D8D8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s ease;
+}
+
+.results li:nth-child(even) {
+    transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+    background: linear-gradient(to bottom, #ffffff 0%, #EFEFEF 100%);
+}
+
+.results li:nth-child(odd) {
+    transform: perspective(100px) rotateX(-3deg) translateY(3px);
+    background: linear-gradient(to top, #ffffff 0%, #EFEFEF 100%);
+}
+
+.population {
+    font-size: 15px;
+}
+
+.highlight {
+    background-color: rgba(31, 112, 187, 0.25);
+    border-radius: 3px;
+}
+
+label {
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+label #count {
+    background-color: white;
+    color: black;
+    text-align: center;
+    text-shadow: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #F7F7F7;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15), inset 0 0 2px rgba(0, 0, 0, 0.2);
+}
