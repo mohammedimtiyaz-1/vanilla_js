@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel='icon' href="../favicon.ico" type="image/x-icon">
+
+    <title>JavaScript30 - Day 07</title>
+</head>
+
+<body>
+
+    Open DevTools to see <a href="script.js" target="_blank">script.js</a> in action. (<strong>F12</strong>)
+
+    <pre>
+        const people = [
+            {name: "Melessa", year: 1979},
+            {name: "Danny", year: 1982},
+            {name: "Stacy", year: 1983},
+            {name: "Tim", year: 1984},
+            {name: "Jenn", year: 1987},
+            {name: "Baby", year: 2010}
+        ];
+
+        //----- SOME()
+        // Array.prototype.some() // is at least one person 19?
+
+        // version 1
+        const isAdult = people.some((person) => {
+            const currentYear = new Date().getFullYear();
+            return currentYear - person.year >= 19;
+        });
+        console.log({isAdult});
+        // version 2 (shorthand / implicit return)
+        const isAdultAlt = people.some((person) => new Date().getFullYear() - person.year >= 19);
+        console.log({isAdultAlt});
+
+
+        //----- EVERY()
+        // Array.prototype.every() // is everyone 19?
+
+        // version 1
+        const allAdults = people.every((person) => {
+            const currentYear = new Date().getFullYear();
+            return currentYear - person.year >= 19;
+        });
+        console.log({allAdults});
+        // version 2 (shorthand / implicit return)
+        const allAdultsAlt = people.every((person) => new Date().getFullYear() - person.year >= 19);
+        console.log({allAdultsAlt});
+
+
+
+
+        const comments = [
+            {text: "Love this!", id: 523423},
+            {text: "Super good", id: 823423},
+            {text: "You are the best", id: 2039842},
+            {text: "Ramen is my fav food ever", id: 123523},
+            {text: "Nice Nice Nice!", id: 542328},
+        ];
+
+
+        //----- FIND()
+        // find is like .filter() but returns just the one you are looking for
+        // .find() the comment with the ID of 823423
+        // version 1
+        const comment = comments.find((comment) => {
+            if (comment.id === 823423) {
+                return true;
+            }
+        });
+        console.log(comment);
+        // version 2 (implicit return)
+        const commentAlt = comments.find((comment) => comment.id === 523423);
+        console.log(commentAlt);
+
+
+        //----- FINDINDEX()
+        // find the comment with this 123523
+        // delete the comment with the ID of 123523
+        // version 1
+        const index = comments.findIndex((comment) => {
+            if (comment.id === 123523) {
+                return true;
+            }
+        });
+        console.log(index);
+        // version 2 (implicit return)
+        const indexAlt = comments.findIndex((comment) => comment.id === 123523);
+        console.log(indexAlt);
+
+
+
+        //----- DELETE item
+        // delete the comment with the ID of 2039842
+        // version 1 using SPLICE
+        const indexSplice = comments.findIndex((comment) => comment.id === 2039842);
+        comments.splice(indexSplice, 1);
+        console.table(comments);
+        // version 2 using new array similar to redux method + ...spread syntax
+        const indexNewArr = comments.findIndex((comment) => comment.id === 123523);
+        const newArr = [...comments.slice(0, indexNewArr), ...comments.slice(indexNewArr + 1)];
+        console.table(newArr);
+    </pre>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
