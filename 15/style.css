@@ -1,0 +1,21 @@
+html {
+    color: black;
+    /* background-color: #1f70bb; */
+    background-color: black;
+    font-family: "Helvetica", sans-serif;
+}
+
+body {margin: 0; color: white;}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+h1 {
+    text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+    font-size: 100px;
+}
